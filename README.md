@@ -1,4 +1,4 @@
-[![ashish223281](https://circleci.com/gh/ashish223281/devops.svg?style=svg)](https://circleci.com/gh/ashish223281/devops)
+[![CircleCI](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/main.svg?style=svg)](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/main)
 
 Overview
 In this project a Machine Learning Microservice API is operationalized.
@@ -13,7 +13,7 @@ Project goal is to operationalize this working, machine learning microservice us
 GIT
 ssh-keygen -o
 
-git clone git@github.com:ashish223281/devops.git
+git clone git@github.com:MunishBansal29/devops_microservices.git
 
 git checkout main
 
@@ -62,11 +62,11 @@ Kubernetes Script:
 
 Steps : minikube start
 
-dockerpath=ashish223281/devops
+dockerpath=MunishBansal29/devops
 kubectl create deployment udacityproject --image=$dockerpath
 
 kubectl get pods
 sleep 5
-kubectl port-forward udacityproject-756b6b9dc7-jx7jw 8080:80
+kubectl port-forward udacityproject29-7769cb8476-clck8 8080:80
 
 

@@ -5,11 +5,11 @@
 
 # Step 1:
 # Create dockerpath
-dockerpath=ashish223281/devops
+dockerpath=munishbansal29/devops
 
 # Step 2:  
 # Authenticate & tag
-docker login --username ashish223281
+docker login --username munishbansal29
 docker tag devops $dockerpath
 echo "Docker ID and Image: $dockerpath"
 

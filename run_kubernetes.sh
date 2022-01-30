@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-dockerpath=ashish223281/devops
+dockerpath=munishbansal29/devops
 # Run the Docker Hub container with kubernetes
 #kubectl run container --image=$dockerpath --image-pull-policy="Always"
-kubectl create deployment udacityproject1 --image=$dockerpath
+#kubectl create deployment udacityproject29 --image=$dockerpath
 
 
 
@@ -15,4 +15,4 @@ sleep 5
 # Step 4:
 # Forward the container port to a host
 
-kubectl port-forward udacityproject1-64456c757b-86rzt 8080:80
+kubectl port-forward udacityproject29-7769cb8476-clck8 8080:80

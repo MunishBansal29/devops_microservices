@@ -1,1 +1,56 @@
-<paste log output from Kubernetes-mediated prediction, here>
+kubectl port-forward udacityproject29-7769cb8476-clck8 8080:80
+$ minikube start
+* minikube v1.18.0 on Ubuntu 18.04 (amd64)
+* Using the none driver based on existing profile
+
+X The requested memory allocation of 2200MiB does not leave room for system overhead (total system memory: 2460MiB). You may face stability issues.
+* Suggestion: Start minikube with less memory allocated: 'minikube start --memory=2200mb'
+
+* Starting control plane node minikube in cluster minikube
+* Running on localhost (CPUs=2, Memory=2460MB, Disk=194868MB) ...
+* OS release is Ubuntu 18.04.5 LTS
+* Preparing Kubernetes v1.20.2 on Docker 19.03.13 ...
+  - kubelet.resolv-conf=/run/systemd/resolve/resolv.conf
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring local host environment ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v4
+* Enabled addons: default-storageclass, storage-provisioner
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+$ docker login --username munishbansal29
+Password: 
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+$ ls
+run_kubernetes.sh
+$ ./run_kubernetes.sh
+-bash: ./run_kubernetes.sh: Permission denied
+$ chmod +x run_kubernetes.sh
+$ ./run_kubernetes.sh
+deployment.apps/udacityproject29 created
+NAME                               READY   STATUS              RESTARTS   AGE
+udacityproject29-7769cb8476-clck8   0/1     ContainerCreating   0          2s
+Error from server (NotFound): pods "udacityproject29-7769cb8476-clck8" not found
+$ ^C
+$ kubectl port-forward udacityproject29-7769cb8476-clck8 8080:80
+error: unable to forward port because pod is not running. Current status=Pending
+$ kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+udacityproject29-7769cb8476-clck8   1/1     Running   0          72s
+$ kubectl port-forward udacityproject29-7769cb8476-clck8 8080:80
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+Handling connection for 8080
+--------------FEEDBACK COMMENT-----------------------
+C02Z2D4WLVCG:devops_munish-main munish$ ./make_prediction.sh
+Port: 8080
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
