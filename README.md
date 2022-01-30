@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/main.svg?style=svg)](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/main)
+[![CircleCI](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/master.svg?style=svg)](https://circleci.com/gh/MunishBansal29/devops_microservices/tree/master)
 
 Overview
 In this project a Machine Learning Microservice API is operationalized.
